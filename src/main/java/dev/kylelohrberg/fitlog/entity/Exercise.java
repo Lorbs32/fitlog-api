@@ -1,5 +1,6 @@
 package dev.kylelohrberg.fitlog.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -16,6 +17,7 @@ public class Exercise {
 
     @ManyToOne
     @JoinColumn(name = "workout_id")
+    @JsonBackReference
     private Workout workout;
 
     public Exercise() {
